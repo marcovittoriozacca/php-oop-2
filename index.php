@@ -20,12 +20,12 @@
 
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row row-gap-4">
                 <?php foreach($arrProducts as $product): ?>
 
                     <div class="col-4">
                         <div class="card">
-                            <img class="card-img-top" src="https://picsum.photos/300/180" alt="Title" />
+                            <img class="card-img-top" src="<?= $product->poster?>" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title"><?= $product->name?></h4>
                                 <p class="card-text"><?= $product->description?></p>
@@ -39,6 +39,8 @@
                                         <p class="card-text"><?= $product->getCalories() ?> kcal</p>
                                     <?php elseif(isset($product->genre)):?>
                                         <p class="card-text">Genere: <?= $product->getGenre() ?></p>
+                                    <?php elseif(isset($product->size)):?>
+                                        <p class="card-text">Grandezza: <?= $product->sizeInCm($product->getSize()) ?> cm</p>
                                     <?php endif; ?>
                                 </div>
                                 <p class="card-text">Categoria: <?= $product->category->getCategory()?></p>
