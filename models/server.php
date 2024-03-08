@@ -6,8 +6,8 @@
     require_once __DIR__ . '/Game.php';
     require_once __DIR__ . '/PetBed.php';
 
-    $dog = new Category('Dog');
-    $cat = new Category('Cat');
+    $dog = new Category('dog');
+    $cat = new Category('cat');
 
     $arrProducts = [
         $croccantiniPremiumCane = new Food($dog, 'Croccantini Premium', 'Croccantini premium per cani adulti, con ingredienti naturali', 'https://rep.grupposme.net/RepAP?code=D1446861&skey=f3b6c41bd09b8d169679070be320a5ac&resize=500', 19.99, 12, 350),

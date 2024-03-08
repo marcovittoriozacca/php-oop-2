@@ -29,19 +29,12 @@ class PetBed extends Product{
         switch ($_size) {
             case 'sm':
                 return '45x30x30';
-                break;
-            
             case 'md':
                 return '60x45x45';
-                break;
-            
             case 'lg':
                 return '80x70x70';
-                break;
-            
             default:
                 return '50x50x50';
-                break;
         }
     }
 }

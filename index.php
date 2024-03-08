@@ -1,5 +1,10 @@
 <?php
+    //server with all class and the products array
     require_once __DIR__ . '/models/server.php';
+
+    //filtro in base alla ricerca dell'utente tramite form e select input
+    include_once __DIR__ . '/partials/filterCategories.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -16,22 +21,26 @@
 
     <header class="text-center py-3">
         <h1>Pet Shop</h1>
+        <!-- form -->
+        <?php include_once __DIR__ . '/partials/form.php' ?>
     </header>
 
     <main>
         <div class="container">
             <div class="row row-gap-4">
-                <?php foreach($arrProducts as $product): ?>
+                <?php foreach($filteredArray as $product): ?>
 
                     <div class="col-4">
                         <div class="card">
-                            <img class="card-img-top" src="<?= $product->poster?>" alt="Title" />
+                            <figure>
+                                <img class="card-img-top" src="<?= $product->poster?>" alt="<?= $product->name?>" />
+                            </figure>
                             <div class="card-body">
-                                <h4 class="card-title"><?= $product->name?></h4>
+                                <h3 class="card-title"><?= $product->name?></h3>
                                 <p class="card-text"><?= $product->description?></p>
                                 <div class="d-flex justify-content-between">
                                     <p class="card-text">Prezzo: <?= $product->getPrice() ?>€</p>
-                                    <p class="card-text"><?= $product->getQuantity()?> disponibili</p>
+                                    <p class="card-text text-success"><?= $product->getQuantity()?> disponibili</p>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <p class="card-text">Tipo: <?= $product->getType()?></p>
@@ -43,7 +52,7 @@
                                         <p class="card-text">Grandezza: <?= $product->sizeInCm($product->getSize()) ?> cm</p>
                                     <?php endif; ?>
                                 </div>
-                                <p class="card-text">Categoria: <?= $product->category->getCategory()?></p>
+                                <p class="card-text">Categoria: <span class="text-warning"><?= $product->category->getCategory()?></span></p>
 
                             </div>
                         </div>
