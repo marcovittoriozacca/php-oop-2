@@ -20,7 +20,7 @@ class Game extends Product{
     }
 
     //setters
-    public function setCalories($_newCalories){
-        return $this->calories = $_newCalories;
+    public function setGenre($_newGenre){
+        return $this->genre = $_newGenre;
     }
 }

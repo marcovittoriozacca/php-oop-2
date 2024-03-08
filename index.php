@@ -1,18 +1,5 @@
 <?php
-    include __DIR__ . '/models/Product.php';
-    include __DIR__ . '/models/Category.php';
-    include __DIR__ . '/models/Food.php';
-    include __DIR__ . '/models/Game.php';
-
-    // $prova1 = new DogP('Collare','Collare per cani','img', 9.99, 12);
-    $dog = new Category('Dog');
-    $cat = new Category('Cat');
-
-    $arrProducts = [
-        $croccantiniPremiumCane = new Food($dog, 'Croccantini Premium', 'Croccantini premium per cani adulti, con ingredienti naturali', 'img', 19.99, 12, 350),
-        $collarePerCani = new Product($dog, 'Collare per cani', 'Collare rosso con guinzaglio per cani', 'img', 15.99, 23),
-        $topoDiPezzaGatto = new Game($cat, 'Topo di pezza', 'Topolino di pezza per far giocare il gatto', 'img', 5.99, 50, 'peluche')
-    ];
+    require_once __DIR__ . '/models/server.php';
 ?>
 
 <!DOCTYPE html>
