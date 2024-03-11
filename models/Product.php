@@ -1,6 +1,8 @@
 <?php
 
 class Product{
+    use Color;
+    
     public $name;
     public $description;
     public $poster;

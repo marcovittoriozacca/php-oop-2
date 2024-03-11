@@ -43,7 +43,7 @@
                                     <p class="card-text text-success"><?= $product->getQuantity()?> disponibili</p>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <p class="card-text">Tipo: <?= $product->getType()?></p>
+                                    <p class="card-text mb-3">Tipo: <?= $product->getType()?></p>
                                     <?php if(isset($product->calories)): ?>
                                         <p class="card-text"><?= $product->getCalories() ?> kcal</p>
                                     <?php elseif(isset($product->genre)):?>
@@ -52,7 +52,12 @@
                                         <p class="card-text">Grandezza: <?= $product->sizeInCm($product->getSize()) ?> cm</p>
                                     <?php endif; ?>
                                 </div>
-                                <p class="card-text">Categoria: <span class="text-warning"><?= $product->category->getCategory()?></span></p>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text">Categoria: <span class="text-warning"><?= $product->category->getCategory()?></span></p>
+                                    <?php if($product->getColor()):?>
+                                        <p class="card-text">Colore: <?= $product->getColor()?></p>
+                                    <?php endif;?>
+                                </div>
 
                             </div>
                         </div>

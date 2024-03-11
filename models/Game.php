@@ -1,6 +1,7 @@
 <?php
 
 class Game extends Product{
+    use Color;
     public $genre;
     public static $type = 'Game';
 

@@ -1,6 +1,7 @@
 <?php
 
 class PetBed extends Product{
+    use Color;
     public $size;
     public static $type = 'PetBed';
 
