@@ -55,7 +55,7 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="card-text">Categoria: <span class="text-warning"><?= $product->category->getCategory()?></span></p>
                                     <?php if($product->getColor()):?>
-                                        <p class="card-text">Colore: <?= $product->getColor()?></p>
+                                        <p class="card-text text-capitalize ">Colore: <?= $product->getColor()?></p>
                                     <?php endif;?>
                                 </div>
 
